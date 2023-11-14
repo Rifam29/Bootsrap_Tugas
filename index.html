@@ -1,75 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Rifa Ecommerce</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
-        crossorigin="anonymous"></script>  
-</head>  
-  
-<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">Rifa Ecommerce</a>
-            <form class="form-inline" id="formItem">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="keyword" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-1" type="submit" id="searchItem">Search</button>
-            </form>
-            <button class="btn btn-primary" id="cart"><i class="fas fa-shopping-cart"></i><span
-                    id="cartItemCount">(0)</span></button>
-        </nav>
-        <div class="row">
-            <div class="row col-md-12 mt-4 ml-5" id="listBarang">
-                    <!-- Kerjakan dibawah ini! -->
-                    <div class="card mr-5 mb-5" style="width: 18rem;">
-                        <img src="logitek.jpg" class="card-img-top mt-5">
-                        <div class="card-body">
-                          <h5 class="card-title mt-5">Keyboard Logitek</h5>
-                          <p class="card-text">Keyboar yang mantap untuk Kantoran nih boyy.</p>
-                          <p class="card-text">Rp 60.000.00</p>
-                          <a href="#" class="btn btn-primary" id="addToCartBtn1">Add To Card</a>
-                            </div>
-                        </div>
-                        <div class="card mr-5 mb-5 ml-5" style="width: 18rem;">
-                            <img src="msi.jpg" class="card-img-top mt-2">
-                            <div class="card-body">
-                              <h5 class="card-title mt-4">Keyboard MSI</h5>
-                              <p class="card-text">Keyboard Gaming MSI Mekanik sangat nyaman dipakai gaming.</p>
-                              <p class="card-text">Rp 300.000.00</p>
-                              <a href="#" class="btn btn-primary" id="addToCartBtn2">Add To Card</a>
-                            </div>
-                        </div>
-                        <div class="card mb-5 ml-5 mr-5" style="width: 18rem;">
-                            <img src="genius.jpeg" class="card-img-top mt-5">
-                            <div class="card-body">
-                              <h5 class="card-title mt-4">Mouse Genius</h5>
-                              <p class="card-text">Mouse Genius biar lebih pinter buat sekolah enak nihh</p>
-                              <p class="card-text">Rp 50.000.00</p>
-                              <a href="#" class="btn btn-primary" id="addToCartBtn3">Add To Card</a>
-                            </div>
-                        </div>
-                        <div class="card mb-5" style="width: 18rem;">
-                          <img src="jerry.jpeg" class="card-img-top mb-5" width="200" height="220">
-                          <div class="card-body">
-                            <h5 class="card-title">Mouse Jerry</h5>
-                            <p class="card-text">Mouse Yang disukai kucing.</p>
-                            <p class="card-text">Rp 30.000.00</p>
-                            <a href="#" class="btn btn-primary" id="addToCartBtn4">Add To Card</a>
-                          </div>
-                        </div>
-                      </div>
-        </div>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Ricommerce</a>
+        <form class="form-inline" id="formItem">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" id="keyword" aria-label="Search" />
+          <button class="btn btn-outline-success my-3 my-sm-2" type="submit" id="searchItem">Search</button>
+        </form>
+        <button class="btn btn-primary" id="cart"><i class="fas fa-shopping-cart"></i>(0)</button>
+      </nav>
+      <div class="row">
+        <div class="row col-md-12 mt-3" id="listBarang"></div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-      <script src="script.js"></script>
-</body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+      var items = [
+        ['001', 'Keyboard Logitek', 60000, 'Keyboard Mantap Sedap Enak.', 'logitek.jpg'],
+        ['002', 'Keyboard Msi', 300000, 'Keyboard gaming MSI Gacor', 'msi.jpg'],
+        ['003', 'Mouse Genius', 50000, 'Mouse Genius biar lebih pinter', 'genius.jpeg'],
+        ['004', 'Mouse Jerry', 30000, 'Mouse yang disukai kucing', 'jerry.jpeg'],
+      ];
+
+      var cart = 0;
+
+      function updateCart() {
+        var addCart = document.getElementById('cart');
+        if (cart < 10) {
+          addCart.innerHTML = `<i class="fas fa-shopping-cart"></i>(${cart})`;
+        } else {
+          addCart.innerHTML = `<i class="fas fa-shopping-cart"></i>(9+)`;
+        }
+      }
+
+      function inputItems(items) {
+        var card = `
+            <div class="col-4 mt-4 mb-5 ml-0">
+                <div class="card" style="width: 18rem;">
+                    <img src="${items[4]}" class="card-img-top" height="200px" width="200px">
+                    <div class="card-body">
+                        <h5 class="card-title" id="itemName">${items[1]}</h5>
+                        <p class="card-text" id="itemDesc">${items[3]}</p>
+                        <p class="card-text">Rp ${items[2].toLocaleString(undefined, { minimumFractionDigits: 2 })}</p>
+                        <a href="#" class="btn btn-primary add-to-cart" data-id="${items[0]}">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.getElementById('listBarang').innerHTML += card;
+      }
+
+      function addToCart(itemId) {
+        cart++;
+        updateCart();
+      }
+
+      var resCart = document.getElementById('cart');
+      resCart.addEventListener('click', function () {
+        cart = 0;
+        updateCart();
+      });
+
+      $(document).on('click', '.add-to-cart', function () {
+        var itemId = $(this).data('id');
+        addToCart(itemId);
+      });
+
+      for (var i = 0; i < items.length; i++) {
+        inputItems(items[i]);
+      }
+
+      function searchItems(keyword) {
+        var searching = [];
+        for (var i = 0; i < items.length; i++) {
+          var itemName = items[i][1].toLowerCase();
+          if (itemName.includes(keyword.toLowerCase())) {
+            searching.push(items[i]);
+          }
+        }
+        return searching;
+      }
+
+      document.getElementById('formItem').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var keyword = document.getElementById('keyword').value;
+        var searching = searchItems(keyword);
+
+        document.getElementById('listBarang').innerHTML = '';
+
+        if (searching.length > 0) {
+          for (var i = 0; i < searching.length; i++) {
+            inputItems(searching[i]);
+          }
+        } else {
+          document.getElementById('listBarang').innerHTML = '<p>Tidak ada hasil yang ditemukan.</p>';
+        }
+      });
+
+      updateCart();
+    </script>
+  </body>
 </html>
